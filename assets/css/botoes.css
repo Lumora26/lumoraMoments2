@@ -1,0 +1,79 @@
+/* ==========================================================================
+   ESTILOS DE BOTÕES E GRID DE AÇÃO (botoes.css) [1]
+   ========================================================================== */
+
+/* Botão principal de entrada (Usado na página de Boas-vindas) */
+.btn-primary {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: var(--color-rose-gold);
+    color: var(--color-white);
+    border: none;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-text-dark);
+}
+
+/* Margem superior do bloco de botões de ação */
+.actions-section {
+    margin-top: 2rem;
+}
+
+/* Grade de 3 colunas para casamentos (Se auto-ajusta no JS se algum botão sumir) */
+.actions-grid-wedding {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+    transition: all 0.5s ease;
+}
+
+/* Botão de ação (Música, Votos e Sapato) */
+.btn-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 0.5rem;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-action:hover {
+    border-color: var(--color-rose-gold);
+}
+
+/* Icone emoji do botão de ação */
+.btn-icon {
+    font-size: 1.125rem;
+}
+
+/* Título principal da ação */
+.btn-title {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-top: 0.25rem;
+}
+
+/* Subtítulo discreto da ação */
+.btn-subtitle {
+    font-size: 0.5rem;
+    color: var(--color-text-muted);
+    margin-top: 0.125rem;
+    line-height: 1.2;
+}

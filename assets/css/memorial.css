@@ -1,0 +1,83 @@
+/* ==========================================================================
+   ESTRUTURA GERAL DO PORTAL E CABEÇALHO (memorial.css) [1]
+   ========================================================================== */
+
+/* Limita a largura máxima no desktop para focar na melhor experiência mobile */
+.memorial-container {
+    max-width: 576px; /* Equivalente ao max-w-xl */
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 0 1.5rem;
+}
+
+/* Centralizador de conteúdos do topo */
+.memorial-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Data do evento de forma discreta */
+.memorial-date {
+    font-size: 0.5625rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-rose-gold);
+    margin-bottom: 0.75rem;
+}
+
+/* Moldura circular da foto de perfil com o gradiente de transição */
+.profile-frame {
+    position: relative;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0.25rem;
+    background: linear-gradient(to top right, var(--color-rose-gold), var(--color-blush));
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.25rem;
+}
+
+/* Foto do casal arredondada por dentro */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+/* Nome em fonte Serifada elegante */
+.profile-name {
+    font-size: 1.875rem;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: var(--color-text-dark);
+}
+
+/* Frase ou citação definidora */
+.profile-quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.625;
+    max-width: 24rem;
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+}
+
+/* Balãozinho / Badge de boas-vindas arredondado */
+.welcome-badge {
+    margin-top: 1.5rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    padding: 0.625rem 1.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-blush);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}

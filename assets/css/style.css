@@ -1,0 +1,69 @@
+/* ==========================================================================
+   1. VARIÁVEIS DO DESIGN SYSTEM (LUMORA LOVE - TEMA CLARO ORIGINAL) [1]
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Românticas Claras [1] */
+    --color-bg: #FAF4F2;           /* Off-white Rosado Suave (Fundo) */
+    --color-card: #FFFDFC;         /* Pérola (Cards e Modais) */
+    --color-border: #F4E3DF;       /* Divisor Rosé Macio */
+    --color-text-dark: #3D1D1D;    /* Vinho Escuro Burgundy (Texto Principal) */
+    --color-text-muted: #927371;   /* Rosé Acinzentado (Subtítulos e Secundários) */
+    --color-rose-gold: #D48C70;    /* Rose Gold Quente (Destaques) */
+    --color-blush: #DC8073;        /* Blush Romântico (Botões e Destaques Ativos) */
+    --color-blush-hover: #C66C5F;  /* Blush Escurecido (Hover) */
+    --color-white: #FFFFFF;        /* Branco Puro */
+    
+    /* Configurações Tipográficas */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   2. RESET GERAL E PROPRIEDADES NATIVAS DO NAVEGADOR
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Classes utilitárias fundamentais */
+.bg-light-theme {
+    background-color: var(--color-bg);
+}
+
+.font-serif {
+    font-family: var(--font-serif);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Efeito de brilho rosa sutil para cards decorativos */
+.glow-rose {
+    box-shadow: 0 4px 20px -2px rgba(220, 128, 115, 0.12);
+}
+
+/* Efeito de entrada suave nas telas */
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease-in-out;
+}
