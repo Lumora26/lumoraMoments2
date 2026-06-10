@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumora Love • Pedro & Mariana</title>
+    
+    <!-- METATAGS DO CASAMENTO -->
+    <meta name="description" content="Lumora - Eternizando o amor de Pedro & Mariana">
+    <meta name="author" content="Lumora">
+    <meta name="theme-color" content="#FAF4F2">
+    
+    <!-- METATAGS DE COMPARTILHAMENTO (WHATSAPP) -->
+    <meta property="og:title" content="Casamento de Pedro & Mariana">
+    <meta property="og:description" content="Acesse nosso portal, veja nossos votos e participe do nosso mural ao vivo!">
+    <meta property="og:image" content="./../img/perfil.jpg">
+    <meta property="og:type" content="website">
+    
+    <link rel="shortcut icon" href="./../img/lumora/logolumora.png" type="image/x-icon">
+    
+    <!-- FONTES DO GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- IMPORTAÇÃO DE TODAS AS FOLHAS DE ESTILO EM CSS PURO -->
+    <link rel="stylesheet" href="./../css/style.css">
+    <link rel="stylesheet" href="./../css/botoes.css">
+    <link rel="stylesheet" href="./../css/galeria.css">
+    <link rel="stylesheet" href="./../css/jornada.css">
+    <link rel="stylesheet" href="./../css/lightbox.css">
+    <link rel="stylesheet" href="./../css/memorial.css">
+    <link rel="stylesheet" href="./../css/modais.css">
+    <link rel="stylesheet" href="./../css/mural.css">
+    <link rel="stylesheet" href="./../css/programacao.css">
+</head>
+<body class="bg-light-theme pb-28">
+
+    <!-- PORTAL PRINCIPAL -->
+    <main class="memorial-container">
+
+        <!-- CABEÇALHO DO PORTAL -->
+         <header class="memorial-header">
+            <span class="memorial-date">12.06.2026</span>
+            <div class="profile-frame">
+                <img src="./../img/perfil.jpg" alt="Pedro & Mariana" class="profile-img">
+            </div>
+            <h2 class="profile-name font-serif">Pedro & Mariana</h2>
+            <span class="memorial-date" style="margin-top: 4px;">Desde 12 de Junho de 2023</span>
+
+            <!-- Frase Definidora do Casal -->
+            <blockquote class="profile-quote font-serif">"No meio de tanta gente e de tantas escolhas, meu coração escolheu você para ser meu lar e minha melhor aventura."</blockquote>
+
+            <!-- Balão de Boas-vindas -->
+             <div class="welcome-badge">
+                ❤️ Feliz nosso dia, meu amor! Colecionei nossos melhores momentos aqui.
+             </div>
+         </header>
+
+         <!-- SEÇÃO DE BOTÕES DE AÇÃO RÁPIDA (DINÂMICA) -->
+          <section class="actions-section">
+            <div id="actionButtonsGrid" class="actions-grid-wedding">
+                <!-- Botão 1: Pedir Música ao DJ -->
+                 <button id="btnPedirMusica" class="btn-action" onclick="toggleModal('djModal', true)">
+                    <span class="btn-icon">🎵</span>
+                    <span class="btn-title">Pedir Música</span>
+                    <span class="btn-subtitle">Manda direto para o DJ</span>
+                 </button>
+
+                <!-- Botão 2: Nossos Votos -->
+                 <button id="btnVotos" class="btn-action" onclick="toggleModal('lettersModal', true)">
+                    <span class="btn-icon">✉️</span>
+                    <span class="btn-title">Nossos Votos</span>
+                    <span class="btn-subtitle">Juramento de amor eterno</span>
+                 </button>
+
+                <!-- Botão 3: Gravata / Sapato -->
+                 <button id="btnPresente" class="btn-action" onclick="toggleModal('pixModal', true)">
+                    <span class="btn-icon">👠</span>
+                    <span class="btn-title">Gravata / Sapato</span>
+                    <span class="btn-subtitle">Operação gravata / Ajude os noivos</span>
+                 </button>
+            </div>
+          </section>
+
+          <!-- LINHA DO TEMPO DA PROGRAMAÇÃO DA FESTA -->
+          <section class="timeline-section">
+            <h3 class="section-title font-serif">Programação da Noite</h3>
+            <div class="timeline-container" id="timeline-container">
+                <!-- Card deslizante vertical de fundo -->
+                <div id="sliding-card" class="sliding-card"></div>
+                
+                <!-- Momento 0: Cerimônia -->
+                <div id="item-0" class="timeline-node">
+                    <div class="bullet"></div>
+                    <div class="node-content">
+                        <span class="label-text">Cerimônia • 17:00</span>
+                        <h4 class="node-title">A Celebração do Amor</h4>
+                        <p class="node-desc">O momento do "Sim" e das bênçãos sob o altar de flores.</p>
+                    </div>
+                </div>
+
+                <!-- Momento 1: Jantar -->
+                <div id="item-1" class="timeline-node">
+                    <div class="bullet"></div>
+                    <div class="node-content">
+                        <span class="label-text">Banquete • 20:30</span>
+                        <h4 class="node-title">Jantar & Brinde Especial</h4>
+                        <p class="node-desc">Celebração à mesa com boa comida, risadas e discursos emocionantes.</p>
+                    </div>
+                </div>
+
+                <!-- Momento 2: Pista de Dança -->
+                <div id="item-2" class="timeline-node">
+                    <div class="bullet"></div>
+                    <div class="node-content">
+                        <span class="label-text">Pista de Dança • 22:00</span>
+                        <h4 class="node-title">Abertura da Pista & Festa</h4>
+                        <p class="node-desc">O DJ comanda a pista. Use o portal para pedir sua música favorita!</p>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+           <!-- A JORNADA DO CASAL (5 MOMENTOS HISTÓRICOS) -->
+            <section class="journey-section">
+                <h3 class="section-title font-serif">Nossa Linha do Tempo</h3>
+                <div class="journey-timeline">
+                    <!-- Momento 1 -->
+                     <div class="journey-node">
+                        <div class="journey-bullet"></div>
+                            <span class="journey-label">1. O Primeiro Olhar (2023)</span>
+                            <div class="journey-card">
+                                <img src="./../img/momentos/m1.jpg" alt="Primeiro Olhar" class="journey-img" onclick="openLightbox(this.src)">
+                                <p class="journey-text">O esbarrão na cafeteria e a conversa que mudou nossos destinos para sempre.</p>
+                            </div>
+                     </div>
+                     <!-- Momento 2 -->
+                     <div class="journey-node">
+                        <div class="journey-bullet"></div>
+                            <span class="journey-label">2. O Início do Namoro (2023)</span>
+                            <div class="journey-card">
+                                <img src="./../img/momentos/m2.jpg" alt="O Início" class="journey-img" onclick="openLightbox(this.src)">
+                                <p class="journey-text">Sob as luzes da cidade e o frio da noite, dissemos nosso primeiro "eu te amo".</p>
+                            </div>
+                     </div>
+                     <!-- Momento 3 -->
+                     <div class="journey-node">
+                        <div class="journey-bullet"></div>
+                            <span class="journey-label">3. A Primeira Viagem (2024)</span>
+                            <div class="journey-card">
+                                <img src="./../img/momentos/m3.jpg" alt="Viagem" class="journey-img" onclick="openLightbox(this.src)">
+                                <p class="journey-text">Nossos pés na areia e a maravilhosa certeza de que o mundo é pequeno perto de nós.</p>
+                            </div>
+                     </div>
+                     <!-- Momento 4 -->
+                     <div class="journey-node">
+                        <div class="journey-bullet"></div>
+                            <span class="journey-label">4. O Noivado (2025)</span>
+                            <div class="journey-card">
+                                <img src="./../img/momentos/m4.jpg" alt="Noivado" class="journey-img" onclick="openLightbox(this.src)">
+                                <p class="journey-text">A decisão de dar o passo mais importante de nossas vidas.</p>
+                            </div>
+                     </div>
+                     <!-- Momento 5 -->
+                     <div class="journey-node">
+                        <div class="journey-bullet"></div>
+                            <span class="journey-label">5. O Casamento (2026)</span>
+                            <div class="journey-card">
+                                <img src="./../img/momentos/m5.jpg" alt="Casamento" class="journey-img" onclick="openLightbox(this.src)">
+                                <p class="journey-text">O dia em que nos tornamos um só perante Deus e todos que amamos.</p>
+                            </div>
+                     </div>
+                </div>
+            </section>
+
+            <!-- ENSAIO FOTOGRÁFICO PRÉ-CASAMENTO -->
+            <section class="gallery-section">
+                <h3 class="section-title font-serif">Ensaio Fotográfico & Vídeos</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="./../img/ensaio/e1.jpg" alt="Ensaio 1" onclick="openLightbox(this.src)">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./../img/ensaio/e2.png" alt="Ensaio 2" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                    <div class="video-gallery-wrapper">
+                        <video id="ensaioVideo" class="gallery-video" controls preload="metadata">
+                            <source src="./../video/Video Project.mp4" type="video/mp4">
+                        </video>
+                    </div>
+            </section>
+
+            <!-- MURAL DE HOMENAGENS AO VIVO (FIREBASE REAL TIME) -->
+             <section class="mural-section">
+                <div class="mural-header">
+                    <h3 class="mural-title font-serif">
+                        <span class="live-indicator">
+                            <span class="live-ping"></span>
+                            <span class="live-dot"></span>
+                        </span>
+                        Mural ao Vivo
+                    </h3>
+                    <span class="mural-status">Atualizado na hora</span>
+                </div>
+
+                <!-- FORMULARIO DE ENVIO IMEDIATO -->
+                 <div class="form-container glow-rose">
+                    <form onsubmit="handleLiveSubmit(event)" class="mural-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Seu Nome</label>
+                                <input type="text" id="form_name" required class="input-field">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Parentesco / Relação</label>
+                                <select id="form_relation" class="select-field">
+                                    <option value="Padrinho">Padrinho / Madrinha 💍</option>
+                                    <option value="Família">Família ❤️</option>
+                                    <option value="Amigo(a)">Amigo(a) ✨</option>
+                                    <option value="Colega">Colega 🤝</option>
+                                    <option value="Outro">Outro 🌟</option>
+                                </select>
+                            </div>
+                        </div>
+                       <div class="form-group">
+                            <label class="form-label">Desejo aos Noivos</label>
+                            <textarea id="form_text" rows="2" class="textarea-field" placeholder="Escreva uma mensagem de carinho para nós na hora da festa..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Registrar Momento (Foto)</label>
+                            <div class="file-uploader">
+                                <input type="file" id="form_photo" accept="image/*" class="file-input" onchange="previewImage(event)">
+                                <div id="photo_placeholder" class="file-placeholder">
+                                    <span>📸</span>
+                                    <span>Tirar Foto / Subir Imagem</span>
+                                </div>
+                            </div>
+                            <div id="preview_container" class="preview-container hidden">
+                                <img id="image_preview" src="" class="preview-img" alt="Preview">
+                                <button type="button" class="btn-remove-photo" onclick="removePreview()">&times;</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-submit uppercase tracking-wide">
+                            Fixar no Mural do Casamento
+                        </button>
+                    </form>
+                </div>
+            
+            <!-- Feed de Mensagens Dinâmico em Tempo Real -->
+            <div id="muralFeed" class="mural-feed">
+                <!-- As mensagens enviadas são injetadas em tempo real pelo Firebase -->
+            </div>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="memorial-footer">
+            <p>Lumora Love • Lembrança Única do Nosso Amor</p>
+            <p class="discreet-text">Escaneie o QR Code para viver e reviver estas lembranças</p>
+        </footer>
+        
+    </main>
+
+    <!-- MODAL 1: PEDIR MÚSICA AO DJ -->
+    <div id="djModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 class="modal-title font-serif">Pedir Música para o DJ</h3>
+                <button class="btn-close" onclick="toggleModal('djModal', false)">&times;</button>
+            </div>
+            <form onsubmit="sendSongToDJ(event)" class="modal-form">
+                <div class="form-group">
+                    <label class="form-label">Seu Nome / Mesa</label>
+                    <input type="text" id="dj_guest" required class="input-field dark-field">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Qual música você quer ouvir?</label>
+                    <input type="text" id="dj_song" required placeholder="Nome da música e artista" class="input-field dark-field">
+                </div>
+                <p class="modal-disclaimer">
+                    * Ao clicar em enviar, seu pedido abrirá o WhatsApp com uma mensagem pronta para o DJ da festa!
+                </p>
+                <button type="submit" class="btn-submit-modal uppercase tracking-wide">
+                    Pedir Música via WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: NOSSOS VOTOS (SUBSTITUINDO "MINHAS CARTAS") -->
+    <div id="lettersModal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 class="modal-title font-serif">Nossos Votos</h3>
+                <button class="btn-close" onclick="toggleModal('lettersModal', false)">&times;</button>
+            </div>
+            
+            <!-- Alternador de Abas dos Votos -->
+            <div class="tabs-navigation">
+                <button id="tab-c1" onclick="switchLetter(1)" class="tab-btn active">Votos do Pedro</button>
+                <button id="tab-c2" onclick="switchLetter(2)" class="tab-btn">Votos da Mariana</button>
+            </div>
+
+            <!-- Conteúdo dos Votos -->
+            <div class="modal-body-content">
+                <!-- Votos do Pedro -->
+                <div id="letter-content-1" class="letter-text">
+                    <p class="votos-narrador font-serif">Mariana,</p>
+                    <p class="votos-paragrafo">Desde o dia em que te conheci, percebi que você seria o meu maior porto seguro e a minha melhor escolha. Prometo te amar, te respeitar e caminhar ao seu lado em cada amanhecer e em cada silêncio.</p>
+                </div>
+
+                <!-- Votos da Mariana -->
+                <div id="letter-content-2" class="letter-text hidden">
+                    <p class="votos-narrador font-serif">Pedro,</p>
+                    <p class="votos-paragrafo">Você é a materialização de todas as minhas preces. Prometo cultivar nosso riso, acalmar seus medos e ser sua parceira de todas as aventuras que Deus preparar para nós.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: GRAVATA & SAPATINHO -->
+    <div id="pixModal" class="modal-overlay hidden">
+        <div class="modal-box text-center">
+            <div class="modal-header">
+                <h3 class="modal-title font-serif">Operação Gravata & Sapatinho ✂️👠</h3>
+                <button class="btn-close" onclick="toggleModal('pixModal', false)">&times;</button>
+            </div>
+            <div class="pix-body">
+                <span class="pix-icon">🎁</span>
+                <p class="pix-desc">Participe da nossa brincadeira! Contribua com nossa Lua de Mel e nos ajude a cortar a gravata do noivo ou passar o sapatinho da noiva.</p>
+                
+                <div class="pix-qr-wrapper">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=pedroemariana@email.com" alt="QR Code Pix do Casal" class="pix-qr-img">
+                </div>
+                
+                <div class="pix-key-container">
+                    <span class="pix-key-title">Chave Pix (E-mail):</span>
+                    <span id="pixKeyValue" class="pix-key-value">pedroemariana@email.com</span>
+                </div>
+                
+                <button id="btnCopyPix" onclick="copyPixKey()" class="btn-copy-pix">
+                    Copiar Chave Pix
+                </button>
+                
+                <p class="pix-disclaimer">Qualquer gesto nos ajuda a construir nossa casinha. Muito obrigado!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX (VISUALIZADOR UNIVERSAL DE IMAGENS EM TELA CHEIA) -->
+    <div id="lightbox" class="lightbox-overlay hidden" onclick="closeLightbox()">
+        <button class="btn-close-lightbox">&times;</button>
+        <img id="lightboxImg" class="lightbox-img" src="" alt="Ampliação">
+    </div>
+
+    <!-- CENTRALIZADOR DE COMPORTAMENTO DO JAVASCRIPT MODULAR (IMPORTANTÍSSIMO: type="module") -->
+    <script type="module" src="./../js/main.js"></script>
+
+</body>
+</html>

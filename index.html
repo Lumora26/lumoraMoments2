@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lumora Love • Pedro & Mariana</title>
+    
+    <!-- METATAGS DE PREPARO E OTIMIZAÇÃO -->
+    <meta name="description" content="Lumora - Transformando memórias em eternidade digital">
+    <meta name="author" content="Lumora">
+    <meta name="theme-color" content="#FAF4F2">
+    <link rel="shortcut icon" href="assets/img/lumora/logolumora.png" type="image/x-icon">
+    
+    <!-- FONTES DO GOOGLE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- LINK PARA A FOLHA DE ESTILOS CENTRAL EM CSS PURO -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <h1>Teste</h1>
+<body class="bg-light-theme">
+
+    <!-- MAIN: ENVOLTÓRIO DA TELA DE ABERTURA -->
+    <main class="welcome-wrapper">
+        <div id="welcomeScreen" class="welcome-screen">
+            <div class="welcome-container">
+                <!-- Tag Superior do Logo -->
+                <span class="welcome-tag">Nossa Cápsula do Tempo • Lumora Love</span>
+                
+                <!-- Título Romântico -->
+                <h1 class="welcome-title font-serif">Pedro & Mariana</h1>
+                
+                <!-- Texto de Convite -->
+                <p class="welcome-text">
+                    Preparei um presente diferente para você. Assista ao nosso vídeo de retrospectiva antes de abrir nossa cápsula de memórias.
+                </p>
+                
+                <!-- Player de Vídeo -->
+                <div class="welcome-video-wrapper">
+                    <video id="retroVideo" class="welcome-video" controls preload="metadata">
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-young-couple-walking-and-laughing-in-the-park-42345-large.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>
+                </div>
+                
+                <!-- Redirecionamento Seguro para a Página Interna do Casamento -->
+                <div class="welcome-btn-container">
+                    <a href="assets/pages/index.html" class="btn-primary uppercase tracking-wide">Abrir Nossa Cápsula</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- RODAPÉ DA ENTRADA -->
+    <footer class="discreet-footer">
+        <p>&copy; MDL • Memorial Digital Lumora</p>
+    </footer>
 </body>
 </html>
