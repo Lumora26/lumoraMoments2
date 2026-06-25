@@ -81,3 +81,16 @@
     color: var(--color-blush);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
+.memorial-footer {
+    margin-top: 5rem; /* Afasta o rodapé do mural ao vivo */
+    text-align: center;
+    font-size: 0.5625rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.625;
+}
+
+.discreet-text {
+    opacity: 0.75; /* Deixa o texto do QR Code ligeiramente mais suave */
+}

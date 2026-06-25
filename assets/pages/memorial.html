@@ -177,10 +177,18 @@
                         </div>
                     </div>
                     <div class="video-gallery-wrapper">
-                        <video id="ensaioVideo" class="gallery-video" controls preload="metadata">
-                            <source src="./../video/Video Project.mp4" type="video/mp4">
-                        </video>
-                    </div>
+                    <iframe
+                        id="ensaioVideo"
+                        class="gallery-video"
+                        width="100%"
+                        height="400"
+                        src="https://www.youtube.com/embed/VJAECSOoXqM?enablejsapi=1"
+                        title="Vídeo de Retrospectiva"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </section>
 
             <!-- MURAL DE HOMENAGENS AO VIVO (FIREBASE REAL TIME) -->
@@ -235,7 +243,7 @@
                         </div>
 
                         <button type="submit" class="btn-submit uppercase tracking-wide">
-                            Fixar no Mural do Casamento
+                            Publicar No Mural
                         </button>
                     </form>
                 </div>

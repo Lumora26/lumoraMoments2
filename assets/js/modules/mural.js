@@ -1,18 +1,21 @@
 /**
  * ==========================================================================
  * MÓDULO: Mural de Homenagens (Sincronização Firebase Firestore) [1, 2]
+ * Versão atualizada e sincronizada estritamente para o SDK 12.14.0.
  * ==========================================================================
  */
 
 import { db } from '../firebase/config.js';
-import { collection, addDoc, query, where, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+// ATENÇÃO: Importações sincronizadas estritamente com a mesma versão 12.14.0 [1]
+import { collection, addDoc, query, where, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
 import { openLightbox } from '../utils/lightbox.js';
 
-let selectedImageBase64 = ""; // Armazena foto selecionada em Base64
-const EVENTO_ID = "pedro-mariana"; // Identificador exclusivo do casamento no banco
+let selectedImageBase64 = ""; // Armazena a foto ativa em Base64
+const EVENTO_ID = "pedro-mariana"; // Identificador exclusivo do casamento
 
 /**
- * Escuta o banco de dados online do Firebase e renderiza novas mensagens instantaneamente [1, 2].
+ * Escuta as atualizações do banco de dados em tempo real na nuvem do Firebase [1, 2].
  */
 export function inicializarMuralRealTime() {
     const q = query(
@@ -21,12 +24,12 @@ export function inicializarMuralRealTime() {
         orderBy("createdAt", "desc")
     );
 
-    // O onSnapshot escuta mudanças e atualiza a tela de todos em tempo real
+    // Monitoramento ativo em tempo real
     onSnapshot(q, (snapshot) => {
         const mural = document.getElementById("muralFeed");
         if (!mural) return;
 
-        mural.innerHTML = ""; // Limpa mural para evitar duplicação
+        mural.innerHTML = ""; // Limpa mural para redesenhar
 
         snapshot.forEach((doc) => {
             const msg = doc.data();
@@ -55,7 +58,7 @@ export function inicializarMuralRealTime() {
                 </div>
             `;
 
-            // Vincula o Lightbox dinamicamente às imagens do Firebase
+            // Vincula o visualizador de imagem (Lightbox)
             if (msg.photo) {
                 setTimeout(() => {
                     const imgEl = document.getElementById(`media-${docId}`);
@@ -65,9 +68,14 @@ export function inicializarMuralRealTime() {
                 }, 50);
             }
         });
+    }, (error) => {
+        console.error("Erro ao escutar atualizações em tempo real do Firebase:", error);
     });
 }
 
+/**
+ * Preview da foto de casamento carregada
+ */
 export function previewImage(event) {
     const file = event.target.files[0];
     if (file) {
@@ -82,13 +90,19 @@ export function previewImage(event) {
     }
 }
 
+/**
+ * Limpa o preview de fotos selecionado
+ */
 export function removePreview() {
     selectedImageBase64 = "";
     document.getElementById('form_photo').value = "";
     document.getElementById('preview_container').classList.add('hidden');
-    document.getElementById('photo_placeholder').innerHTML = "<span>📸</span> Tirar Foto / Subir Imagem";
+    document.getElementById('photo_placeholder').innerHTML = "<span>📸</span> Tirar Foto ou Anexar";
 }
 
+/**
+ * Envia as informações do formulário para o Firestore [1, 2].
+ */
 export async function handleLiveSubmit(event) {
     event.preventDefault();
 
@@ -97,12 +111,12 @@ export async function handleLiveSubmit(event) {
     const texto = document.getElementById('form_text').value;
 
     if (!texto.trim() && !selectedImageBase64) {
-        alert("Por favor, digite uma mensagem ou tire uma foto para enviar sua homenagem!");
+        alert("Por favor, digite um recadinho ou tire uma foto para anexar à nota!");
         return;
     }
 
     try {
-        // Adiciona o documento diretamente no banco de dados em nuvem [1, 2]
+        // Envia as informações direto para o banco em nuvem [1, 2]
         await addDoc(collection(db, "mensagens"), {
             eventoId: EVENTO_ID,
             author: nome,
@@ -112,13 +126,14 @@ export async function handleLiveSubmit(event) {
             createdAt: new Date().toISOString()
         });
 
+        // LIMPA OS CAMPOS DO FORMULÁRIO (Agora será executado com sucesso!) [1]
         document.getElementById('form_name').value = "";
         document.getElementById('form_text').value = "";
         removePreview();
 
         alert("Seu carinho foi gravado e compartilhado no mural ao vivo! 🎉");
     } catch (e) {
-        console.error("Erro ao salvar no Firebase: ", e);
-        alert("Erro ao conectar com a nuvem do Firebase.");
+        console.error("Erro ao tentar salvar no Firestore:", e);
+        alert("Não foi possível conectar ao Firebase. Verifique se o seu Firestore Database está ativo em modo de teste no Console do Firebase.");
     }
 }

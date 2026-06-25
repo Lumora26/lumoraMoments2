@@ -67,3 +67,10 @@ body {
     pointer-events: none;
     transition: opacity 0.8s ease-in-out;
 }
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
